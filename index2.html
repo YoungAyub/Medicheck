@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCheck</title>
+    <script src="./Assets/tailwind.js"></script>
+    <script src="./Assets/particles.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+        }
+
+        #particles-js {
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./Assets/back1.jpg');
+            background-size: cover;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        nav a {
+            margin-right: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fdfdfd;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+
+        nav a:hover {
+            color: #fdfcfc;
+        }
+
+        nav .home-icon svg,
+        nav .contact-icon svg,
+        nav .about-icon svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+        }
+
+        .dark-mode {
+            background-color: #e41212;
+            color: #f0f0f0;
+        }
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #f8f2f2;
+        }
+
+        #theme-toggle {
+            font-size: 18px;
+            color: #eee9e9;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #theme-toggle:hover {
+            color: #dd1f1f;
+        }
+    </style>
+
+    <script>
+        particlesJS.load('particles-js', './Assets/particlesjs-config.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        }
+    </script>
+</head>
+
+<body class="light-mode">
+    <div id="particles-js"></div>
+    <header class="text-white-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-white-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5">
+                    </path>
+                </svg>
+                <span class="ml-3 text-xl">MediCheck</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="link inline-flex items-center text-white-900 px-5 py-3 focus:outline-none hover:text-red-600 text-md" href="./index2.html">Главная страница</a>
+                <a class="link inline-flex items-center text-white-900 px-5 py-3 focus:outline-none hover:text-red-600 text-md" href="./contactblack.html">Наши контакты</a>
+                <a class="link inline-flex items-center text-white-900 px-5 py-3 focus:outline-none hover:text-red-600 text-md" href="./aboutblack.html">О нас</a>
+                <button id="theme-toggle"
+        class="link inline-flex items-center text-white-900 px-5 py-3 focus:outline-none hover:text-white-600 text-base"
+        onclick="toggleThemeAndRedirect()">Сменить тему</button>
+
+<script>
+    function toggleThemeAndRedirect() {
+        toggleTheme(); // Вызываем функцию смены темы
+        window.location.href = "./index.html"; // Перенаправляем на index2.html
+    }
+</script> </nav>
+            
+        </div>
+    </header>
+
+
+    <section class="text-white-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white"
+                    style="text-shadow: 2px 2px 4px rgb(240, 17, 17); letter-spacing: 2px;">MediCheck</h1>
+                <p class="mb-8 leading-relaxed"
+                    style="padding: 10px; text-shadow: 2px 2px 4px rgb(233, 11, 11); color: rgb(245, 240, 240);"><strong><em>Выберите
+                            симптом и ответьте на простые вопросы, используя наш MediCheck чтобы установить
+                            возможный диагноз по поводу вашего состояния здоровья. Проконсультируйтесь со своим
+                            врачом, если вы считаете, что у вас серьезные проблемы со здоровьем.</em></strong></p>
+                <div class="flex justify-center">
+                    <button class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
+                        onclick="funLoadSymptomsChecker()">Пройти опрос</button>
+
+                    <script>
+                        function funLoadSymptomsChecker() {
+                            toggleTheme();
+                            window.location.href = "./black2.html";
+                        }
+                    </script>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto px-5 py-12">
+            <div class="flex flex-wrap -m-4 justify-center">
+                <div class="p-4">
+                    <div class="graph-animation">
+                        <img src="./Assets/static.jpg" alt="Статистика заболеваемости ОРВИ в СНГ странах" width="400"
+                            height="500">
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="graph-animation">
+                        <img src="./Assets/static.png" alt="Статистика заболеваемости ОРВИ в СНГ странах" width="400"
+                            height="500">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8 text-white">
+                <h2 class="text-2xl font-bold mb-4">Статистика заболеваемости в СНГ странах</h2>
+                <p class="text-sm">Здесь представлены изображения, отображающие статистику разных заболеваемости в
+                    странах СНГ.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <style>
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .graph-animation {
+            animation: slideInFromLeft 1s ease-out;
+        }
+    </style>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                themeToggle.innerText = 'Сменить тему';
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                themeToggle.innerText = 'Вернуться к светлой теме';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
